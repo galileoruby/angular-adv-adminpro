@@ -1,1 +1,38 @@
-<p>grafica1 works!</p>
+<div class="row">
+  <div class="col-6">
+      <app-dona 
+      titulo="ventas"
+      [data]="[1,2,3]"
+    [leyenda]="['1','2','3']"
+
+      ></app-dona>
+  </div>
+  <div class="col-6">
+    <app-dona
+      titulo="garantias"
+      [data]="[10,20,30]"
+    [leyenda]="['10','20','30']"
+
+    >
+    </app-dona>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <app-dona
+      titulo="quejas"
+      [data]="[100,200,800]"
+      [leyenda]="['RH','Cajas','Cedis']"
+    ></app-dona>
+  </div>
+  <div class="col-6">
+    <app-dona
+    titulo="merma"
+    [data]="[10,30,70]"
+    [leyenda]="['abarrotes','perfumería','blancos']"
+    >
+
+    </app-dona>
+  </div>
+</div>
