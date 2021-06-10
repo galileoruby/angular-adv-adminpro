@@ -18,7 +18,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    this.tituloSubs.unsubscribe();
+    this.tituloSubs?.unsubscribe();
   }
 
   ngOnInit(): void {

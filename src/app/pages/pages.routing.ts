@@ -9,6 +9,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromisesComponent } from './promises/promises.component';
 import { RxJsComponent } from './rx-js/rx-js.component';
 import { FromEventComponent } from './from-event/from-event.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
     {
         path: 'dashboard',
         component: PagesComponent,
+        canActivate: [AuthGuard],
         children: [
             { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'progres barr' } },

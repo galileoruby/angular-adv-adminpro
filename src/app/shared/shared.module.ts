@@ -23,6 +23,13 @@ import { HeaderComponent } from './header/header.component';
     BreadcrumbsComponent,
     SidebarComponent,
     HeaderComponent,
+  ],
+  providers: [
+    {
+      provide: Window,
+      useValue: window
+
+    }
   ]
 })
 export class SharedModule { }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 import { AbstractControlOptions } from "@angular/forms";
-import Swal from 'sweetalert2'
 
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { fnpasswordsIguales } from './fnpasswordsIguales.directive';
@@ -38,7 +39,8 @@ export class RegisterComponent {
   // validators: fnpasswordsIguales
 
   constructor(private fb: FormBuilder,
-    private userService: UsuarioService
+    private userService: UsuarioService,
+    private router: Router
   ) { }
 
 
@@ -57,12 +59,13 @@ export class RegisterComponent {
 
     this.userService.crearUsuario(this.registerForm.value)
       .subscribe(resp => {
-        console.log(resp)
+        console.log(resp);
+        this.router.navigateByUrl('/dashboard');
       }
         , (err) => {
 
           //si hay error
-          Swal.fire('Error',err.error.msg, 'error');
+          Swal.fire('Error', err.error.msg, 'error');
 
         });
 
